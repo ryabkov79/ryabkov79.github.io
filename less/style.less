@@ -1,0 +1,132 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06.01.2016, 16:32:06
+    Author     : User
+*/
+
+@import "bootstrap/bootstrap.less";
+
+body{
+    padding-top: 80px;
+    font-family: Verdana;
+}
+
+.navbar-inverse {
+    background-color: @gray-light;
+    border:none;
+    .navbar-toggle {
+        border-color: #fff;
+    }
+    .navbar-nav{
+        li{
+            a{
+                color: #fff;
+                font-size: 26px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                &:hover,
+                    &:focus {
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+}
+
+.breadcrumb{
+    background-color: inherit;
+    a{
+        color:#767676;
+        text-decoration: underline;
+        &.active{
+            text-decoration: none;
+        }
+    }
+}
+
+.catalog{
+    .item{
+        padding: 20px;
+        margin-bottom: 35px;
+        background-color: #DCDCDC;
+        color: #767676;
+        max-width: 250px;
+        .title{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .price{
+            font-size: 20px;
+            color: #444444;
+            float: left;
+        }
+        .cart{
+            float: right;
+        }
+    }
+}
+
+
+.modal-dialog{
+    width:465px;
+    color:#535353;
+    margin: 50px auto;
+    .modal-header{
+        text-align: center;
+        border-bottom:none;
+        padding-bottom: 0px;
+        .modal-title{
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .close{
+            opacity: 0.7;
+            position: relative;
+            top: -60px;
+            right: -92px;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+    .modal-content{
+        border-radius: 0px;   
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;    
+        input{
+            width: 100%;
+            height: 40px;
+        }
+        label {
+            margin-top: 15px;
+            font-size: 11px;
+            width: 100%;
+            text-align: center;
+        }
+        textarea{
+            width: 100%;
+            resize: none;
+        }
+    }
+    .modal-footer{
+        border-top:none;
+        button{
+            display: block;
+            margin:auto;
+            background-color: #535353;
+            color:#fff;
+            border-radius: 0px;
+            border: none;
+            font-size: 18px;
+        }
+    }
+}
