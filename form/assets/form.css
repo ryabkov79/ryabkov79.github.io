@@ -42,12 +42,12 @@ table.MT td.MT_Center {
 #reg-card input[type="submit"]{
   color: #fff;
   border: none;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#007700+0,87bf91+50,007700+100 */
-  background: #007700; /* Old browsers */
-  background: -moz-linear-gradient(left,  #007700 0%, #87bf91 50%, #007700 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #007700 0%,#87bf91 50%,#007700 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #007700 0%,#87bf91 50%,#007700 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007700', endColorstr='#007700',GradientType=1 ); /* IE6-9 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#005427+0,51bc63+50,005427+100 */
+  background: #005427; /* Old browsers */
+  background: -moz-linear-gradient(left,  #005427 0%, #51bc63 50%, #005427 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #005427 0%,#51bc63 50%,#005427 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #005427 0%,#51bc63 50%,#005427 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005427', endColorstr='#005427',GradientType=1 ); /* IE6-9 */
 }
 #reg-card input[type="submit"]:hover{
   cursor: pointer;
