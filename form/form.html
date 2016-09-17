@@ -116,96 +116,67 @@
               </div>
               <div class="row">
                 <div class="col col col-xs-8">
-                  <div class="row label">
+                  <div class="row input">
                     <div class="col col-xs-12">
-                      <font>*</font> Фамилия владельца карты
+                      <label for="fname"><font>*</font> Фамилия владельца карты</label>
+                      <input type="text" id="fname" name="fname" value="" placeholder="Введите Вашу фамилию">
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="text" name="fname" value="" placeholder="Введите Вашу фамилию">
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      <font>*</font> Имя владельца карты
+                      <label for="sname"><font>*</font> Имя владельца карты</label>
+                      <input type="text" id="sname" name="sname" value="" placeholder="Введите Ваше имя">
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="text" name="sname" value="" placeholder="Введите Ваше имя">
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      <font>*</font> Отчество владельца карты
+                      <label for="pname"><font>*</font> Отчество владельца карты</label>
+                      <input type="text" id="pname" name="pname" value="" placeholder="Введите Ваше отчество">
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="text" name="pname" value="" placeholder="Введите Ваше отчество">
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      Дата рождения
+                      <label for="phone"><font>*</font> Мобильный телефон (на данный номер будет отправлен код активации карты)</label>
+                      +7 <input type="text" id="phone" name="phone" value="" ><input type="submit" name="send-sms" value="Отправить код" >
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="text" name="bdate" value="" placeholder="число/месяц/год">
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      <font>*</font> Электронная почта
+                      <label for="bdate"> Дата рождения</label>
+                      <input type="text" id="bdate" name="bdate" value="" placeholder="число/месяц/год">
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="text" name="email" value="" placeholder="example@example.ru">
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      <font>*</font> Контактный телефон (на данный номер будет отправлен код активации карты)
+                      <label for="email"><font>*</font> Электронная почта</label>
+                      <input type="text" id="email" name="email" value="" placeholder="example@example.ru">
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      +7 <input type="text" name="phone" value="" ><input type="submit" name="send-sms" value="Отправить код" >
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      Город проживания
+                      <label for="sex">Пол</label>
+                      <input name="sex" id="sex-male" type="radio" value="male"><label class="inline" for="sex-male">Мужской</label>
+                      <input name="sex" id="sex-female" type="radio" value="female"><label class="inline" for="sex-female">Женский</label>
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="text" name="city" value="" placeholder="Введите Ваш город">
+                      <label for="city">Город проживания</label>
+                      <input type="text" id="city" name="city" value="" placeholder="Введите Ваш город">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col col-xs-7">
-                      <div class="row label">
+                      <div class="row input">
                         <div class="col col-xs-12">
-                          <font>*</font> Номер карты
+                          <label for="card-num"><font>*</font> Номер карты</label>
+                          <input type="text" id="card-num" name="card-num" value="">
                         </div>
                       </div>
                       <div class="row input">
                         <div class="col col-xs-12">
-                          <input type="text" name="card-num" value="">
-                        </div>
-                      </div>
-                      <div class="row label">
-                        <div class="col col-xs-12">
-                          <font>*</font> Пин-код карты
-                        </div>
-                      </div>
-                      <div class="row input">
-                        <div class="col col-xs-12">
-                          <input type="text" name="card-pin" value="">
+                          <label for="card-pin"><font>*</font> Пин-код карты</label>
+                          <input type="text" id="card-pin" name="card-pin" value="">
                         </div>
                       </div>
                     </div>
@@ -213,35 +184,34 @@
                       <img src="./assets/card-pin.png">
                     </div>
                   </div>
-                  <div class="row label">
+                  <div class="row input">
                     <div class="col col-xs-12">
-                      <font>*</font> Код активации из СМС
+                      <label for="sms-code"><font>*</font> Код активации из СМС</label>
+                      <input type="text" id="sms-code" name="sms-code" value="">
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="text" name="sms-code" value="">
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      <font>*</font> Согласие на получение СМС-рассылки от сети аптек СТОЛИЧКИ
+                      <input type="checkbox" id="peron-data-agreement" name="peron-data-agreement">
+                      <label class="inline" for="peron-data-agreement"><font>*</font> Согласие на сбор данных в соответствии с звконодательством о защите информации</label>
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="radio" name="sms-delivery" value="yes"> Да<Br>
-                      <input type="radio" name="sms-delivery" value="no"> Нет<Br>
-                    </div>
-                  </div>
-                  <div class="row label">
-                    <div class="col col-xs-12">
-                      <font>*</font> Согласие на сбор данных в соответствии с звконодательством о защите информации
+                      <input type="checkbox" id="rules-agreement" name="rules-agreement">
+                      <label class="inline" for="rules-agreement"><font>*</font> Согласие с правилами участия</label>
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="radio" name="peron-data-agreement" value="yes"> Да<Br>
+                      <input type="checkbox" id="sms-delivery" name="sms-delivery">
+                      <label class="inline" for="sms-delivery">Согласие на получение СМС-рассылки от сети аптек СТОЛИЧКИ</label>
+                    </div>
+                  </div>
+                  <div class="row input">
+                    <div class="col col-xs-12">
+                      <input type="checkbox" id="email-delivery" name="email-delivery">
+                      <label class="inline" for="email-delivery">Согласие на получение E-mail рассылки от сети аптек СТОЛИЧКИ</label>
                     </div>
                   </div>
                   <div class="row label">

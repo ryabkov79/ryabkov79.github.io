@@ -71,6 +71,12 @@ table.MT td.MT_Center {
   display: block;
   margin-top: 20px;
 }
+#reg-card label{
+  display: block;
+}
+#reg-card label.inline{
+  display: inline;
+}
 #reg-card .header {
   border-top: #C1C2C4 solid 1px;
   border-bottom: #C1C2C4 solid 1px;
