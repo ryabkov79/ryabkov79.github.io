@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ############################################################################################################################# */
+/*          ########################################   ОСНОВНЫЕ СТИЛИ КОНТЕНТА   ######################################          */
+/*                 #############################################################################################                 */
+body{
+	background: #d6d6d6 fixed url('./bg.jpg') center top no-repeat;
+	background-size: 100% auto;
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	font-family:Arial;
+	font-size:12px;
+	color:#000000;
+	font-style:normal;
+}
+input{
+	font-family:Arial;
+	font-size:14px;
+	color:#000000;
+	font-style:normal;
+}
+h1{
+	font-family:Arial;
+	font-size:35px;
+	color:#575757;
+	font-style:normal;
+	font-weight:100;
+	margin:0px 0px 20px 0px;
+}
+h1 a{
+	color:#575757;
+	font-style:italic;
+}
+h2{
+	font-family:Arial;
+	font-size:26px;
+	color:#1b1c20;
+	font-weight:100;
+	margin:0px 0px 10px 0px;
+}
+h3{
+	font-size:16px;
+	font-weight:bold;
+}
+a{
+	color:black;
+	text-decoration:underline;
+}
+a:hover{
+	text-decoration:none;
+}
+a img{
+	border:0px;
+}
+p{
+	margin:5px 0px 5px 0px;
+	line-height:18px;
+}
+form{
+	margin:0px;
+	padding:0px;
+}
+td{
+	vertical-align:top;
+	text-align:left;
+}
+.Center{
+	text-align:center  !important;
+}
+.Right{
+	text-align:right;
+}
+.Bold{
+	font-weight:bold;
+}
+.FloatLeft{
+	float:left;
+}
+.FloatRight{
+	float:right;
+}
+.FS11{
+	font-size:11px !important;
+}
+span.HelpPhone{
+	color:#999999;
+	float:right;
+	margin:7px 130px 0px 0px;
+}
+p.Warning{
+	padding:5px 0px 5px 30px;
+	border:1px solid #ffcc00;
+	background: url('/img/warning.gif') 8px 6px no-repeat #ffffde;
+	-webkit-border-top:	3px;
+	-moz-border-radius:	3px;
+	border-radius:		3px;
+}
+
+.bg_green{
+	background-color:	#005213;
+}
+.bg_red{
+	background-color:	#c7040e;
+}
+
+
+
+/*                 #############################################################################################                 */
+/*          ########################################   ОСНОВНЫЕ СТИЛИ КОНТЕНТА   ######################################          */
+/* ############################################################################################################################# */

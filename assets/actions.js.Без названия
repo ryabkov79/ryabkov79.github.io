@@ -1,0 +1,140 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//                             		КРУТИЛКА АКЦИЙ
+//////////////////////////////////////////////////////////////////////////////////////////
+
+var	opacity_step		=	10;
+var	change_time			=	1000;
+var auto_time_out		=	6000;
+var time_out			=	change_time / (100 / opacity_step);
+var	current_action		=	1;
+var	number_actions		=	0;
+var	is_changing			=	false;
+var	is_mouse_over		=	false;
+var auto_timeout_id		=	0;
+
+
+function ActionsBanInit(main_div_id){
+	if(document.getElementById(main_div_id)){
+		var main_el = document.getElementById(main_div_id);
+		div_els = main_el.getElementsByTagName("div");
+		var num_actions = div_els.length;
+	
+		if((num_actions - 5) > 1){
+			main_el.onmouseover	=function(){is_mouse_over	=	true;	clearTimeout(auto_timeout_id);}
+			main_el.onmouseout	=function(){is_mouse_over	=	false;	auto_timeout_id = setTimeout("ActionsBanAutoRotate()",auto_time_out);}
+		
+			for(var i = 0; i < num_actions; i++){
+				var clas = getAttr(div_els[i],"class");
+				//alert("clas="+clas+"  i="+i);
+				if(clas == 'ActionImg Loading'){
+					div_els[i].style.visibility	=	"hidden";
+				}
+				if(clas == 'ActionImg'){
+					number_actions++;
+					div_els[i].setAttribute("id","ActionImg_"+number_actions);
+					//div_els[i].style.zIndex = (number_action * 10);
+					if(number_actions > 1){
+						div_els[i].style.visibility	=	"hidden";
+						div_els[i].style.filter		=	"alpha(opacity=0)";
+						div_els[i].style.opacity	=	"0.0";
+					}else{
+						div_els[i].style.visibility	=	"visible";
+						div_els[i].style.filter		=	"alpha(opacity=100)";
+						div_els[i].style.opacity	=	"1.0";
+					}
+				}
+			}
+			auto_timeout_id = setTimeout("ActionsBanAutoRotate()",auto_time_out);
+		}else{
+			for(var i = 0; i < num_actions; i++){
+				var clas = getAttr(div_els[i],"class");
+				if(clas.indexOf('Button')>=0){
+					div_els[i].style.visibility	=	"hidden";
+				}
+				if(clas == 'ActionImg Loading'){
+					div_els[i].style.visibility	=	"hidden";
+				}
+				if(clas == 'ActionImg'){
+					number_actions++;
+					div_els[i].style.visibility	=	"visible";
+				}
+			}
+		}
+	}
+}
+
+function ActionsBanAutoRotate(){
+	//alert(is_mouse_over);
+	if(!is_mouse_over){
+		if((current_action+1)>number_actions){new_action=1;}else{new_action=current_action+1;}
+		ActionsBanChange(new_action);
+		auto_timeout_id = setTimeout("ActionsBanAutoRotate()",auto_time_out);
+	}
+}
+
+function ActionsBanPrev(){
+	if(!is_changing){
+		if((current_action-1)==0){new_action=number_actions;}else{new_action=current_action-1;}
+		ActionsBanChange(new_action);
+	}
+}
+
+function ActionsBanNext(){
+	if(!is_changing){
+		if((current_action+1)>number_actions){new_action=1;}else{new_action=current_action+1;}
+		ActionsBanChange(new_action);
+	}
+}
+
+function ActionsBanChange(n){
+	is_changing = true;
+	ActionsBanSetOpacity(current_action,1,100);
+	ActionsBanSetOpacity(n,2,0);
+	
+	current_action = n;
+}
+
+function ActionsBanSetOpacity(id,direction,opacity){
+	//alert("id="+id+"direction="+direction+"opacity="+opacity)
+	var el = document.getElementById('ActionImg_'+id);
+	if(direction == 1){
+		opacity = opacity - opacity_step;
+
+		if(browser_name == 'IE'){
+			el.style.filter="alpha(opacity= " + opacity + ")";
+		}else{
+			el.style.opacity="0." + opacity;
+		}
+
+		if(opacity == 0){
+			el.style.visibility	=	"hidden";
+			is_changing = false;
+		}else{
+			setTimeout("ActionsBanSetOpacity("+id+",1,"+opacity+")",time_out);
+		}
+	}
+	if(direction == 2){
+		if(opacity == 0){
+			el.style.visibility	=	"visible";
+		}
+
+		opacity = opacity + opacity_step;
+
+		if(browser_name == 'IE'){
+			el.style.filter="alpha(opacity= " + opacity + ")";
+		}else{
+			if(opacity < 100){el.style.opacity="0." + opacity;}else{el.style.opacity="1.0";}
+		}
+	
+		if(opacity < 100){
+			setTimeout("ActionsBanSetOpacity("+id+",2,"+opacity+")",time_out);
+		}else{
+			is_changing = false;
+		}
+	}
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//                             		КРУТИЛКА АКЦИЙ
+//////////////////////////////////////////////////////////////////////////////////////////

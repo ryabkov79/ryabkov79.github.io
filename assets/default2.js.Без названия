@@ -1,0 +1,213 @@
+var browser_name	=	navigator.appName;
+var browser_version	=	navigator.appVersion;
+if(browser_name == 'Microsoft Internet Explorer'){
+	browser_name = 'IE';
+	browser_version = browser_version.substr(browser_version.indexOf("MSIE ")+5,3);
+}
+//alert("browser_name="+browser_name+"browser_version="+browser_version);
+
+function CloseMessage(id){
+	var el = document.getElementById(id).style;
+	el.visibility = "hidden";
+	if(id=="NoMoveMouse"){no_move_message_is_show	= "no";}
+}
+
+function getAttr(ele, attr){
+	if(attr == "class" && browser_name == 'IE' && (browser_version == '7.0' || browser_version == '6.0')){attr = "className";}
+	return ele.getAttribute(attr);
+}
+
+function get_attr_class(){
+	var attr = "class";
+	if(browser_name == 'IE' && (browser_version == '7.0' || browser_version == '6.0')){attr = "className";}
+	return attr;	
+}
+
+function ShowGoods(type){
+	attr = get_attr_class();
+	document.getElementById("GoodsType_1").style.display = "none";
+	document.getElementById("GoodsType_2").style.display = "none";
+	document.getElementById("GoodsType_3").style.display = "none";
+
+	document.getElementById("GoodButton_1").setAttribute(attr,"");
+	document.getElementById("GoodButton_2").setAttribute(attr,"");
+	document.getElementById("GoodButton_3").setAttribute(attr,"");
+
+	document.getElementById("GoodsType_"+type).style.display = "";
+	document.getElementById("GoodButton_"+type).setAttribute(attr,"Selected");
+}
+
+function getFullOffsetLeft(el){
+	var cur = el;
+	var res = cur.offsetLeft;
+	while(cur.tagName!="BODY"){
+	cur = cur.offsetParent;
+	res += cur.offsetLeft;
+	};
+	return res;
+};
+
+function getFullOffsetTop(el){
+	var cur = el;
+	var res = cur.offsetTop;
+	while(cur.tagName!="BODY"){
+	cur = cur.offsetParent;
+	res += cur.offsetTop;
+	};
+	return res;
+};
+
+
+// ВЫБОР ГОРОДА
+function OpenSelectCity(){
+	document.getElementById("SelectCityDiv").style.visibility="visible";
+}
+
+function CloseSelectCity(){
+	document.getElementById("SelectCityDiv").style.visibility="hidden";
+}
+// ВЫБОР ГОРОДА
+
+
+
+// ИЩЕМ ТОЛЬКО В БЛИЖАЙШИХ АПТЕКАХ
+function nearest_stores(){
+	var ch_box = document.getElementById('NearestStoresCheckBox');
+	var cookie_value = getCookie('ns');
+	if(cookie_value == '2' || cookie_value==undefined){
+		// пишем куку
+		setCookie('ns','1',30,'/');
+		ch_box.checked = true;
+	}else{
+		// отменяем куку
+		setCookie('ns','2',30,'/');
+		ch_box.checked = false;
+	}
+}
+
+function nearest_stores_multi(){
+	nearest_stores();
+	var ch_box = document.getElementById('NearestStoresCheckBoxMulti');
+	var cookie_value = getCookie('ns');
+	if(cookie_value == '2'){
+		// пишем куку
+		ch_box.checked = false;
+	}else{
+		// отменяем куку
+		ch_box.checked = true;
+	}
+}
+
+function no_nearest_stores_selected(){
+	var ch_box = document.getElementById('NearestStoresCheckBox');
+	ch_box.checked = false;
+	alert('Не указано ни одной ближайшей аптеки');
+}
+
+function neares_no_stores(){
+	var ch_box = document.getElementById('NearestStoresCheckBox');
+	ch_box.checked = false;
+	alert('Не указано ни одной ближайшей аптеки');
+}
+
+function neares_need_auth_or_login(){
+	var ch_box = document.getElementById('NearestStoresCheckBox');
+	ch_box.checked = false;
+	alert('Для поиска по ближайшим аптекам авторизуйтесь или зарегистрируйтесь');
+}
+
+function setCookie(c_name,value,exdays,path){
+	var exdate=new Date();
+	exdate.setDate(exdate.getDate() + exdays);
+	var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()) + ((path) ? "; path=" + path : "");
+	//alert(c_value);
+	document.cookie=c_name + "=" + c_value;
+}
+
+
+function getCookie(c_name){
+	var i,x,y,ARRcookies=document.cookie.split(";");
+	for (i=0;i<ARRcookies.length;i++){
+		x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+		y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+		x=x.replace(/^\s+|\s+$/g,"");
+		if (x==c_name){
+			return unescape(y);
+		}
+	}
+}
+//ИЩЕМ ТОЛЬКО В БЛИЖАЙШИХ АПТЕКАХ
+
+
+
+// Отслеживание цены товара и наличия в аптеке
+function showlowprice(num,id,position_id){
+	//alert(id+"|"+position_id);
+	var el	= document.getElementById(id).style;
+	var el2	= document.getElementById(position_id);
+	if(el.display == 'none'){
+		el.top		= getFullOffsetTop(el2) - 10 + "px";
+		el.left		= getFullOffsetLeft(el2) + "px";
+		$("#"+id).fadeIn(500);
+	}else{
+		$("#"+id).fadeOut(500);
+	}
+	if(num > 0){
+		el2.checked = true; 
+	}else{
+		el2.checked = false; 
+	}
+}
+
+function lowprice_add(){
+	$("#AddNewDrug").fadeIn(500);
+	document.getElementById("SearchInput").value = "";
+	$("#SearchInput").focus();
+}
+
+function EditLP(id1,id2){
+	$("#"+id1).hide();
+	$("#"+id2).show();
+}
+
+function CloseEditLP(id1,id2){
+	$("#"+id1).show();
+	$("#"+id2).hide();	
+}
+
+
+// Отслеживание цены товара и наличия в аптеке
+
+
+//Показ/скрытие описания товара
+function ShowDrugDescription(){
+	var el	= document.getElementById('DrugDescription').style;
+	
+	if(el.display == 'none'){
+		$("#DrugDescription").fadeIn(500);
+		$("#DrugDescriptionButton").html('Скрыть аннотацию к препарату');
+	}else{
+		$("#DrugDescription").fadeOut(500);
+		$("#DrugDescriptionButton").html('Показать аннотацию к препарату');
+	}
+}
+//Показ/скрытие описания товара
+
+
+$().ready(function() {
+	var send_feedback = $('#send_feedback');
+	$('#send_feedback_btn').on('mouseover',function() {
+		send_feedback.css('top', getFullOffsetTop(document.getElementById('send_feedback_btn')) + 20 + "px");
+		send_feedback.css('left',getFullOffsetLeft(document.getElementById('send_feedback_btn')) + "px");
+
+		send_feedback.show();
+	}).on('mouseout',function() {
+
+		send_feedback.hide();
+	});
+	$('#send_feedback').on('mouseover',function() {
+		send_feedback.show();
+	}).on('mouseout',function() {
+		send_feedback.hide();
+	});
+});

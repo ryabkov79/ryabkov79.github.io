@@ -1,0 +1,156 @@
+.col {
+  box-sizing: border-box;
+}
+table.MT td.MT_Center {
+  padding: 0px 15px 15px 15px;
+  background: rgba(255, 255, 255, 0.6);
+}
+#reg-card {
+  margin: 10px 0 20px 0;
+  font-size: 18px;
+}
+#reg-card .row.input {
+  margin-bottom: 20px;
+}
+#reg-card .row.label {
+  margin-bottom: 5px;
+}
+#reg-card h2 {
+  text-align: center;
+  color: #2F4C35;
+  margin: 15px 20px;
+}
+#reg-card font {
+  color: red;
+}
+#reg-card img {
+  display: inline;
+  max-width: 100%;
+}
+#reg-card img.banner {
+  position: absolute;
+  left: 200px;
+  top: 40px;
+}
+
+#reg-card input[type="text"]{
+  background: #DEE7DF;
+  border: 1px solid #2F4C35;
+  padding: 5px;
+  width: 250px;
+}
+#reg-card input[type="submit"]{
+  color: #fff;
+  border: none;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#007700+0,87bf91+50,007700+100 */
+  background: #007700; /* Old browsers */
+  background: -moz-linear-gradient(left,  #007700 0%, #87bf91 50%, #007700 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #007700 0%,#87bf91 50%,#007700 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #007700 0%,#87bf91 50%,#007700 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007700', endColorstr='#007700',GradientType=1 ); /* IE6-9 */
+}
+#reg-card input[type="submit"]:hover{
+  cursor: pointer;
+}
+#reg-card input[name="send-sms"]{
+  border-radius: 5px;
+  padding: 6px;  
+  margin-left: 10px;
+}
+#reg-card input[name="bdate"]{
+  width: 125px;
+}
+#reg-card input[name="card-pin"], #reg-card input[name="sms-code"]{
+  width: 100px;
+}
+#reg-card input[name="register"]{
+  border-radius: 8px;
+  padding: 10px 50px;  
+  font-size: 26px;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+}
+#reg-card .header {
+  border-top: #C1C2C4 solid 1px;
+  border-bottom: #C1C2C4 solid 1px;
+  margin-bottom: 60px;
+  background-color: #fff;
+}
+#reg-card #banner-card {
+  border-radius: 5px;
+}
+#reg-card .advantages {
+  color:#3E4042;
+  font-size: 12px;
+  padding: 15px;
+  border: #C1C2C4 solid 1px;
+  background: rgba(222, 231, 223, 0.6);
+  margin-top: 20px;
+}
+#reg-card .advantages p{
+  text-indent: 20px;
+  line-height: 2;
+}
+#reg-card .advantages h3 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 19px;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+}
+.col-xs-12 {
+  width: 100%;
+}
+.col-xs-11 {
+  width: 91.66666667%;
+}
+.col-xs-10 {
+  width: 83.33333333%;
+}
+.col-xs-9 {
+  width: 75%;
+}
+.col-xs-8 {
+  width: 66.66666667%;
+}
+.col-xs-7 {
+  width: 58.33333333%;
+}
+.col-xs-6 {
+  width: 50%;
+}
+.col-xs-5 {
+  width: 41.66666667%;
+}
+.col-xs-4 {
+  width: 33.33333333%;
+}
+.col-xs-3 {
+  width: 25%;
+}
+.col-xs-2 {
+  width: 16.66666667%;
+}
+.col-xs-1 {
+  width: 8.33333333%;
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}

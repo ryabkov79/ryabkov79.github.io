@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//                             		 ¿“¿ÀŒ√ “Œ¬¿–Œ¬
+//////////////////////////////////////////////////////////////////////////////////////////
+
+function ShowCatalog(id){
+	var el	= document.getElementById("CatalogTable_"+id).style;
+	var el2	= document.getElementById("CatalogName_"+id);
+	attr	= get_attr_class();
+
+	if(el.display == "none"){
+		el.display = "";
+		el2.setAttribute(attr,"Parent");
+	}else{
+		el.display = "none";
+		el2.setAttribute(attr,"Parent Hidden");
+	}
+}
+
+function MoveToCatalog(id){
+	url = "/catalog/" + id + "/";
+	window.location.href = url;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//                             		 ¿“¿ÀŒ√ “Œ¬¿–Œ¬
+//////////////////////////////////////////////////////////////////////////////////////////

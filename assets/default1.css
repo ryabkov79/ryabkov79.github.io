@@ -1,0 +1,677 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* ############################################################################################################################# */
+/*          #################################   СТИЛИ ГЛАВНОЙ ТАБЛИЦЫ И ЛЕВОЙ КОЛОНКИ   ###############################          */
+/*                 #############################################################################################                 */
+
+
+table.MT{
+	width:940px;
+	margin:0px auto 0px auto;
+}
+
+	table.MT td.MT_Logo{
+		/* 2015 2016 happy new year merry christmas */
+		/*background: url('/i/s/new/top_bg_christmas.png') 0% 100% no-repeat; */
+		background: url('./top_bg.png') 0% 100% no-repeat;
+		width: 100%;
+		height:115px;
+		text-align:left;;
+	}
+	
+		div.TopLogo{
+			width:330px;
+			float: left;
+			height:100px;
+			margin:5px 0px 0px 0px;
+			border:0px solid black;
+		}
+			div.TopLogo img{
+				width:330px;
+				height:100px;
+			}
+		
+		div.TopDescr{
+			width:600px;
+			color: white;
+			float: right;
+			font-size:14px;
+			height:20px;
+			margin:20px 0px 0px 0px;
+			border:0px solid black;
+		}
+	
+		div.TopRegion{
+			width:155px;
+			float: right;
+			height:35px;
+			font-size:11px;
+			margin:0px 0px 0px 0px;
+			border:0px solid black;
+			overflow:hidden;
+			text-align:right;
+		}
+			div.TopRegion select{
+				margin:0px;
+			}
+			
+		div.TopCabinet{
+			width:132px;
+			float: right;
+			height:20px;
+			font-size:11px;
+			margin:10px 0px 0px 0px;
+			background: url('./lock.png') 0% 0% no-repeat;
+			border:0px solid black;
+			overflow:hidden;
+		}
+			div.TopCabinet a{
+				margin-left:15px;
+			}
+			
+		div.send_feedback{
+			float: right;
+			width:200px;
+			height:25px;
+			margin:10px 0px 0px 0px;
+			border:0px solid black;
+			overflow:hidden;
+		}
+			div.send_feedback #send_feedback_btn{
+				background: url('./send_feedback.png') 0px 0px no-repeat;
+				padding-left: 20px;
+				height: 20px;
+				display: inline-block;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+			#send_feedback{
+				display: none;
+				position: absolute;
+				width: 160px;
+				height: 80px;
+				top: 0px;
+				left: 0px;
+				z-index: 1000;
+				background-color: white;
+				border: 1px solid black;
+				-webkit-border-radius:	7px;
+				-moz-border-radius:		7px;
+				border-radius:			7px;
+				filter:progid:DXImageTransform.Microsoft.Shadow(strength=5,color=#999,direction=135);
+				box-shadow: 5px 5px 5px #999;
+				-moz-box-shadow: 5px 5px 5px #999;
+				-webkit-box-shadow: 5px 5px 5px #999;
+			}
+				#send_feedback ul{
+					margin: 8px 0px 0px 18px;
+					padding: 0px;
+				}
+					#send_feedback ul li{
+						margin: 6px 0px;
+						padding: 0px;
+						list-style-type: none;
+					}
+						#send_feedback ul li a{
+							font-size: 14px;
+						}
+			
+		div.TopPhone{
+			float: right;
+			width:230px;
+			height:25px;
+			margin:10px 0px 0px 0px;
+			border:0px solid black;
+			overflow:hidden;
+		}
+			div.TopPhone div.TopSprav{
+				font-size:11px;
+				margin:3px 0px 0px 0px;
+				float:left;
+				width:70px;
+				height:15px;
+				border:0px solid black;
+				overflow:hidden;
+			}
+			div.TopPhone div.PhoneCode{
+				font-size: 14px;
+				font-weight: bold;
+				margin:3px 0px 0px 0px;
+				float:left;
+				width:30px;
+				height:20px;
+				line-height:14px;
+				border:0px solid black;
+				overflow:hidden;
+			}
+			div.TopPhone div.PhoneNumber{
+				font-size: 22px;
+				font-weight: bold;
+				margin:0px 0px 0px 0px;
+				float:left;
+				width:100px;
+				height:20px;
+				line-height:20px;
+				border:0px solid black;
+				overflow:hidden;
+			}
+	table.MT td.MT_Search{
+		width: 100%;
+		height:150px;
+		text-align:left;
+		vertical-align:top;
+	}
+		table.MT td.MT_Search div.MT_Phones{
+			width: 100%;
+			height:30px;
+			position:relative;
+			z-index: 2;
+			padding: 0px 35px 0px 38px;
+		}
+			table.MT td.MT_Search div.MT_Phones div{
+				display: inline-block;
+				font-size: 18px;
+				height:25px;
+				padding-top: 8px;
+				margin-top: 8px;
+			}
+			table.MT td.MT_Search div.MT_Phones div.p1{
+				background: url('./phone-s1.png') 0px 0px no-repeat;
+				padding-left: 90px;
+				width: 215px;
+			}
+			table.MT td.MT_Search div.MT_Phones div.p2{
+				background: url('/i/s/phone-w1.png') 0px 0px no-repeat;
+				padding-left: 83px;
+				width: 215px;
+			}
+				table.MT td.MT_Search div.MT_Phones div.p2 a{
+					background: url('/i/s/phone-o.png') 4px 25px no-repeat;
+					padding-bottom: 10px;
+				}
+			
+			table.MT td.MT_Search div.MT_Phones div.p3{
+				background: url('/i/s/phone-wv.png') 20px 0px no-repeat;
+				padding-left: 155px;
+				width: 256px;
+				margin-left: 178px;
+			}
+				table.MT td.MT_Search div.MT_Phones div.p3 a{
+					background: url('/i/s/phone-o1.png') 0px 25px no-repeat;
+					padding-bottom: 10px;
+					width: 220px;
+					text-align: right;
+				}
+				table.MT td.MT_Search div.MT_Phones div img{
+					margin-top: 8px;
+					display: inline-block;
+				}
+				table.MT td.MT_Search div.MT_Phones div a{
+					font-size: 22px;
+					text-decoration: none;
+					cursor: default;
+					margin-left: 8px;
+					margin-top: -8px;
+					display: inline-block;
+				}
+
+	table.MT td.MT_Search div.MT_Search_Div{
+		width: 100%;
+		height:120px;
+		position:relative;
+	}
+		td.MT_Search table{
+			/*width:940px;*/
+			margin:		0px 0px 0px 0px;
+			position:	absolute;
+			top:		15px;
+			left:		0px;
+			z-index:	10;
+		}
+			td.MT_Search table td.S1{
+				width:100px;
+				font-size: 16px;
+				text-align:right;
+				vertical-align:middle;
+				margin:0px 0px 0px 0px;
+			}
+			td.MT_Search table td.S2{
+				width:500px;
+				margin:0px 0px 0px 0px;
+			}
+			td.MT_Search table td.S3{
+				width:50px;
+				margin:0px 0px 0px 0px;
+			}
+			td.MT_Search table td.S4{
+				width:200px;
+				font-size: 16px;
+				text-align:right;
+				vertical-align:middle;
+				margin:0px 0px 0px 0px;
+			}
+			td.MT_Search table td.S5{
+				width:50px;
+				margin:0px 0px 0px 0px;
+			}
+
+			td.MT_Search input.Search_Text{
+				width:480px;
+				font-size: 20px;
+				border:1px solid #c4c4c4;
+				padding:5px 10px;
+				margin:0px 14px 0px 0px;
+			}
+
+
+			td.MT_Search div.MLTSearch{
+				position:absolute;
+				top:0px;
+				left:0px;
+				width:230px;
+				height:40px;
+				border:1px solid #CCC;
+				font-size:11px;
+				color:#929292;
+				margin:0px;
+			}
+			td.MT_Search div.MLTSearch a{
+				font-size:12px;
+				font-style:italic;
+				color:#575757;
+			}
+			td.MT_Search div.NearestCheckBox{
+				position:absolute;
+				top:50px;
+				left:95px;
+				width:280px;
+				height:20px;
+				border:0px solid #CCC;
+				z-index:	10;
+			}
+
+		td.MT_Search div.TopMenu{
+			text-align:	center;
+			width:		100%;
+			height:		30px;
+			position:	absolute;
+			top:		82px;
+			left:		0px;
+			margin:		0px 0px 0px 0px;
+			z-index:	10;
+		}
+		td.MT_Search div.TopMenu :last-child{
+			margin-right: 0px;
+		}
+			div.TopMenu a{
+				font-family: Verdana;
+				font-size:16px;
+				text-transform:uppercase;
+				margin:0px 14px 0px 0px;
+				text-decoration: none;
+			}
+			div.TopMenu a:hover{
+				text-decoration:underline;
+			}
+		td.MT_Search div.TopSearchBg{
+			position:	absolute;
+			top:		-30px;
+			left:		0px;
+			z-index:	1;
+			background-color:	lightgrey;
+			opacity:	0.5;
+			width:		100%;
+			height:		135px;
+			border-bottom:	1px solid grey;
+			filter:progid:DXImageTransform.Microsoft.Shadow(strength=5,color=#333333,direction=180);
+			box-shadow: 0px 5px 5px #333333;
+			-moz-box-shadow: 0px 5px 5px #333333;
+			-webkit-box-shadow: 0px 5px 5px #333333;
+		}
+	table.MT td.MT_Menu{
+		width:				100%;
+		height:				40px;
+		text-align:			left;
+		vertical-align:		top;
+		background-color:	white;
+	}
+		td.MT_Menu div{
+			width:			100%;
+			height:			30px;
+			text-align:		center;
+			margin:			10px 0px 0px 0px;
+		}
+		td.MT_Menu a{
+			font-size:17px;
+			text-decoration: none;
+			color: white;
+			margin: 8px 5px 0px 5px;
+			padding: 5px 25px; 
+		}
+		td.MT_Menu a:hover{
+			text-decoration:underline;
+		}
+
+		
+	table.MT td.MT_Sep{
+		width:100%;
+		height:20px;
+	}
+	table.MT td.MT_Center{
+		width: 700px;
+		padding: 0px 10px 10px 10px;
+		text-align:left;
+		vertical-align:top;
+		position:relative;
+		background: rgba(255, 255, 255, 0.8);
+	}
+	
+
+	
+	
+	
+		
+		
+		
+
+
+	td.MT_Left{
+		width:240px;
+		padding-left:20px;
+	}
+		td.MT_Left div{
+		}
+			td.MT_Left div h5{
+				font-size:14px;
+				font-weight:100;
+				text-transform:uppercase;
+				background:url(/i/s/new/red_circle.png) 12px 8px no-repeat;
+				padding:11px 0px 9px 42px;
+				border-bottom: 1px solid #c2c2c2;
+				margin:0px !important;
+			}
+			td.MT_Left div h5 a{
+				text-decoration:none;
+				color: #7a7a7a;
+			}
+				td.MT_Left div h5 a:hover{
+					text-decoration:underline;
+				}
+			td.MT_Left div p{
+				margin:10px;
+			}
+
+			div.Left_Basket{
+				background:white;
+				margin:17px 0px 17px 0px;
+				padding:0px;
+				width:220px;
+				border:0px solid white;
+				filter:progid:DXImageTransform.Microsoft.Shadow(strength=5,color=#666666,direction=90);
+				box-shadow: 0px 5px 5px #666666;
+				-moz-box-shadow: 0px 5px 5px #666666;
+				-webkit-box-shadow: 0px 5px 5px #666666;
+				color: #393939;
+			}
+				div.Left_Basket h5{
+					background-image:url(/i/s/new/basket.png) !important;
+				}
+				div.Left_Basket p.UserInfo{
+					line-height:14px;
+				}
+					div.Left_Basket p.UserInfo a{
+						font-size:9px;
+						font-weight:100;
+					}
+				div.Left_Basket p.BasketInfo{
+					cursor:pointer;
+				}
+				div.Left_Basket p.BasketInfo span{
+					color: #c7040e;
+					font-size:16px;
+					font-weight:bold;
+				}
+			div.Left_Social{
+			}
+				div.Left_Social h5{
+					background-image: none !important;
+					padding-left: 11px !important;
+				}
+				div.Left_Social div.Rings{
+					text-align: center;
+				}
+					div.Left_Social div.Rings a{
+						display: inline-block;
+						margin: 5px 10px;
+					}
+						div.Left_Social div.Rings a img{
+							width: 50px;
+						}
+
+			div.Left_Spec{
+			}
+				div.Left_Spec table{
+					width: 180px;
+					margin:10px;
+				}
+				div.Left_Spec table td.img{
+					width: 90px;
+				}
+					div.Left_Spec table td.img img{
+						width: 80px;
+					}
+				div.Left_Spec table td.name{
+					width: 90px;
+					
+				}
+					div.Left_Spec table td.name p.Name{
+						color: #393939;
+						text-transform:uppercase;
+						line-height: 16px;
+					}
+					div.Left_Spec table td.name p.Price{
+						color: #c7040e;
+						font-size:15px;
+					}
+
+			td.MT_Left div.Left_Banner{
+			}
+				td.MT_Left div.Left_Banner img{
+					width:220px;
+					/*-webkit-border-radius:	7px;
+					-moz-border-radius:		7px;
+					border-radius:			7px;*/
+				}
+
+		
+		
+	td.MT_Center{
+		padding-bottom:41px;
+	}
+
+
+	td.MT_FooterCopy{
+		padding:30px 0px 46px 0px;
+		color:#7a7a7a;
+	}
+		td.MT_FooterCopy img{
+			float:left;
+			margin:0px 18px 0px 0px;
+		}
+
+
+
+	td.MT_FooterPhone{
+		padding:30px 0px 0px 0px;
+		color:#575757;
+	}
+		td.MT_FooterPhone img{
+			float:right;
+			margin:0px 500px 0px 0px;
+		}
+/*                 #############################################################################################                 */
+/*          #################################   СТИЛИ ГЛАВНОЙ ТАБЛИЦЫ И ЛЕВОЙ КОЛОНКИ   ###############################          */
+/* ############################################################################################################################# */
+
+
+
+/* ############################################################################################################################# */
+/*          ########################################   НЕОФАРМИК - СООБЩЕНИЕ   ########################################          */
+/*                 #############################################################################################                 */
+div.Neopharmic_message{
+	z-index:50;
+	position:absolute;
+	top:94px;
+	left:800px;
+	width:301px;
+	height:100px;
+	background:url(/i/s/message.png) 0% 0% no-repeat;
+	color: white;
+	text-align:left;
+}
+	div.Neopharmic_message p{
+		position: absolute;
+		top:30px;
+		left:12px;
+		width:176px;
+		height:59px;
+		font-size:10px;
+		color: white;
+		line-height:11px;
+	}
+	div.Neopharmic_message div.Close{
+		position: absolute;
+		bottom:3px;
+		right:0px;
+		width:14px;
+		height:14px;
+		border:0px solid #FF0000;
+		cursor:pointer;
+	}
+/*                 #############################################################################################                 */
+/*          ########################################   НЕОФАРМИК - СООБЩЕНИЕ   ########################################          */
+/* ############################################################################################################################# */
+
+
+
+/* ############################################################################################################################# */
+/*          ####################################   НЕОФАРМИК - МЫШЬ БЕЗ ДВИЖЕНИЯ   ####################################          */
+/*                 #############################################################################################                 */
+div.NoMoveMouse{
+	z-index:50;
+	position:absolute;
+	top:94px;
+	left:800px;
+	width:301px;
+	height:100px;
+	background:url(/i/s/message.png) 0% 0% no-repeat;
+	color: white;
+	text-align:left;
+}
+	div.NoMoveMouse p{
+		position: absolute;
+		top:30px;
+		left:12px;
+		width:176px;
+		height:59px;
+		font-size:10px;
+		color: white;
+		line-height:11px;
+	}
+	div.NoMoveMouse div.Close{
+		position: absolute;
+		bottom:3px;
+		right:0px;
+		width:14px;
+		height:14px;
+		border:0px solid #FF0000;
+		cursor:pointer;
+	}
+/*                 #############################################################################################                 */
+/*          ####################################   НЕОФАРМИК - МЫШЬ БЕЗ ДВИЖЕНИЯ   ####################################          */
+/* ############################################################################################################################# */
+
+
+
+/* ############################################################################################################################# */
+/*          ######################################   БЫСТРЫЙ ПОИСК - РЕЗУЛЬТАТЫ   #####################################          */
+/*                 #############################################################################################                 */
+div.Quick_Search_Results{
+	z-index:60;
+	position:absolute;
+	width:350px;
+	padding:20px 13px;
+	background-color:#FFFFFF;
+	border:1px solid #999999;
+	filter:progid:DXImageTransform.Microsoft.Shadow(strength=5,color=#333333,direction=135);
+	box-shadow: 5px 5px 5px #333333;
+	-moz-box-shadow: 5px 5px 5px #333333;
+	-webkit-box-shadow: 5px 5px 5px #333333;
+	text-align:left;
+}
+	div.Quick_Search_Results p{
+		font-weight:bold;
+		padding:0px 0px 15px 16px;
+		border-bottom:1px solid #dddddd;
+	}
+		div.Quick_Search_Results p span{
+			color:#f4063e;
+		}
+	div.Quick_Search_Results ul{
+		padding:4px 0px 0px 0px;
+		margin:0px;
+	}
+		div.Quick_Search_Results ul li{
+			list-style:none;
+			line-height:14px;
+			margin:0px;
+			padding:2px 16px;
+		}
+			div.Quick_Search_Results ul li.Selected{
+				background-color:#e1e1e1;
+			}
+			div.Quick_Search_Results ul li a{
+				font-weight:bold;
+				text-decoration:none;
+			}
+		div.Quick_Search_Results ul li.All{
+			margin-top:10px;
+			padding:8px 16px;
+		}
+	div.Quick_Search_Results table{
+		width:100%;
+	}
+		div.Quick_Search_Results table th{
+			background-color:#eaeaea;
+			text-align:left;
+			font-weight:bold;
+			font-size:12px;
+			padding:7px;
+		}
+		div.Quick_Search_Results table td span{
+			color:#FF0000;
+		}
+/*                 #############################################################################################                 */
+/*          ######################################   БЫСТРЫЙ ПОИСК - РЕЗУЛЬТАТЫ   #####################################          */
+/* ############################################################################################################################# */
+
+div.mangotele{
+    width: 296px;
+    height: 23px;
+    left: 30px;
+    bottom: 0px;
+    z-index: 999999;
+    position: fixed !important;	
+    display: block !important;
+    padding: 7px 0px 0px 0px;
+    background: #0c8b3d 65px 2px url('/i/s/online-call.png') no-repeat;
+	font-size: 14px;
+    font-family: Arial;
+    color: white;
+    font-weight: normal;
+    font-style: normal;
+    border-top-left-radius: 25px;
+    cursor: pointer;
+}
