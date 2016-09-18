@@ -160,3 +160,11 @@ table.MT td.MT_Center {
 .row:after {
   clear: both;
 }
+#reg-card input[type="text"].error{
+  border-color: red;
+}
+#reg-card label.error {
+  line-height: 28px;
+  font-size: 14px;
+  color: red;
+}

@@ -9,6 +9,9 @@
     <link href="./assets/content.css" rel="stylesheet" charset="utf-8">
     <link href="./assets/center5.css" rel="stylesheet" charset="utf-8">
     <link href="./assets/form.css" rel="stylesheet" charset="utf-8">
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/jquery.validate.js"></script>
+    <script src="./assets/js/form.js"></script>
   </head>
   <body>
     <table cellpadding="0" cellspacing="0" border="0" class="MT">
@@ -137,7 +140,7 @@
                   <div class="row input">
                     <div class="col col-xs-12">
                       <label for="phone"><font>*</font> Мобильный телефон (на данный номер будет отправлен код активации карты)</label>
-                      +7 <input type="text" id="phone" name="phone" value="" ><input type="submit" name="send-sms" value="Отправить код" >
+                      +7 <input type="text" id="phone" name="phone" value="" maxlength="10" ><input type="submit" name="send-sms" value="Отправить код" >
                     </div>
                   </div>
                   <div class="row input">
@@ -169,14 +172,14 @@
                     <div class="col col-xs-7">
                       <div class="row input">
                         <div class="col col-xs-12">
-                          <label for="card-num"><font>*</font> Номер карты</label>
-                          <input type="text" id="card-num" name="card-num" value="">
+                          <label for="card_num"><font>*</font> Номер карты</label>
+                          <input type="text" id="card_num" name="card_num" value="">
                         </div>
                       </div>
                       <div class="row input">
                         <div class="col col-xs-12">
-                          <label for="card-pin"><font>*</font> Пин-код карты</label>
-                          <input type="text" id="card-pin" name="card-pin" value="">
+                          <label for="card_pin"><font>*</font> Пин-код карты</label>
+                          <input type="text" id="card_pin" name="card_pin" value="">
                         </div>
                       </div>
                     </div>
@@ -186,32 +189,32 @@
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <label for="sms-code"><font>*</font> Код активации из СМС</label>
-                      <input type="text" id="sms-code" name="sms-code" value="">
+                      <label for="sms_code"><font>*</font> Код активации из СМС</label>
+                      <input type="text" id="sms_code" name="sms_code" value="">
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="checkbox" id="peron-data-agreement" name="peron-data-agreement">
-                      <label class="inline" for="peron-data-agreement"><font>*</font> Согласие на сбор данных в соответствии с звконодательством о защите информации</label>
+                      <input type="checkbox" id="person_data_agreement" name="person_data_agreement">
+                      <label class="inline" for="person_data_agreement"><font>*</font> Согласие на сбор данных в соответствии с звконодательством о защите информации</label>
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="checkbox" id="rules-agreement" name="rules-agreement">
-                      <label class="inline" for="rules-agreement"><font>*</font> Согласие с правилами участия</label>
+                      <input type="checkbox" id="rules_agreement" name="rules_agreement">
+                      <label class="inline" for="rules_agreement"><font>*</font> Согласие с правилами участия</label>
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="checkbox" id="sms-delivery" name="sms-delivery">
-                      <label class="inline" for="sms-delivery">Согласие на получение СМС-рассылки от сети аптек СТОЛИЧКИ</label>
+                      <input type="checkbox" id="sms_delivery" name="sms_delivery">
+                      <label class="inline" for="sms_delivery">Согласие на получение СМС-рассылки от сети аптек СТОЛИЧКИ</label>
                     </div>
                   </div>
                   <div class="row input">
                     <div class="col col-xs-12">
-                      <input type="checkbox" id="email-delivery" name="email-delivery">
-                      <label class="inline" for="email-delivery">Согласие на получение E-mail рассылки от сети аптек СТОЛИЧКИ</label>
+                      <input type="checkbox" id="email_delivery" name="email_delivery">
+                      <label class="inline" for="email_delivery">Согласие на получение E-mail рассылки от сети аптек СТОЛИЧКИ</label>
                     </div>
                   </div>
                   <div class="row label">
