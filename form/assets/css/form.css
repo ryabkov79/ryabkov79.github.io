@@ -60,7 +60,7 @@ table.MT td.MT_Center {
 #reg-card input[name="bdate"]{
   width: 125px;
 }
-#reg-card input[name="card-pin"], #reg-card input[name="sms-code"]{
+#reg-card input[name="card_pin"], #reg-card input[name="sms_code"]{
   width: 100px;
 }
 #reg-card input[name="register"]{
@@ -167,4 +167,10 @@ table.MT td.MT_Center {
   line-height: 28px;
   font-size: 14px;
   color: red;
+}
+#reg-card #datepicker_icon {
+  vertical-align: bottom;
+}
+#reg-card #datepicker_icon:hover {
+  cursor: pointer;
 }

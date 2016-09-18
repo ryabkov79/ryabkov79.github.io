@@ -8,9 +8,12 @@
     <link href="./assets/default1.css" rel="stylesheet" charset="utf-8">
     <link href="./assets/content.css" rel="stylesheet" charset="utf-8">
     <link href="./assets/center5.css" rel="stylesheet" charset="utf-8">
-    <link href="./assets/form.css" rel="stylesheet" charset="utf-8">
+    <link href="./assets/jquery-ui/jquery-ui.css" rel="stylesheet">
+    <link href="./assets/css/form.css" rel="stylesheet" charset="utf-8">
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/jquery.validate.js"></script>
+    <script src="./assets/jquery-ui/jquery-ui.js"></script>
+    <script src="./assets/js/datepicker-ru.js"></script>
     <script src="./assets/js/form.js"></script>
   </head>
   <body>
@@ -113,7 +116,7 @@
                 <div class="col col col-xs-12 header">
                   <h2>Регистрация карты</h2>
                   <div>
-                    <img class="banner" src="assets/banner.png">
+                    <img class="banner" src="./assets/img/banner.png">
                   </div>
                 </div>
               </div>
@@ -146,7 +149,7 @@
                   <div class="row input">
                     <div class="col col-xs-12">
                       <label for="bdate"> Дата рождения</label>
-                      <input type="text" id="bdate" name="bdate" value="" placeholder="число/месяц/год">
+                      <input type="text" id="bdate" name="bdate" value="" placeholder="число.месяц.год"> <img id="datepicker_icon" src="./assets/img/datepicker_icon.png">
                     </div>
                   </div>
                   <div class="row input">
@@ -173,13 +176,13 @@
                       <div class="row input">
                         <div class="col col-xs-12">
                           <label for="card_num"><font>*</font> Номер карты</label>
-                          <input type="text" id="card_num" name="card_num" value="">
+                          <input type="text" id="card_num" name="card_num" value="" maxlength="12">
                         </div>
                       </div>
                       <div class="row input">
                         <div class="col col-xs-12">
                           <label for="card_pin"><font>*</font> Пин-код карты</label>
-                          <input type="text" id="card_pin" name="card_pin" value="">
+                          <input type="text" id="card_pin" name="card_pin" value="" maxlength="4">
                         </div>
                       </div>
                     </div>
@@ -226,7 +229,7 @@
                 <div class="col col-xs-4">
                   <div class="row">
                     <div class="col col-xs-12">
-                      <img id="banner-card" src="assets/banner-card.png">
+                      <img id="banner-card" src="./assets/img/banner-card.png">
                     </div>
                   </div>
                   <div class="row">
