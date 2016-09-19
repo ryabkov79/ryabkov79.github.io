@@ -33,11 +33,12 @@ table.MT td.MT_Center {
   top: 40px;
 }
 
-#reg-card input[type="text"]{
+#reg-card input[type="text"], #reg-card select{
   background: #DEE7DF;
   border: 1px solid #2F4C35;
   padding: 5px;
   width: 250px;
+  font-size: 14px;
 }
 #reg-card input[type="submit"]{
   color: #fff;
@@ -173,4 +174,9 @@ table.MT td.MT_Center {
 }
 #reg-card #datepicker_icon:hover {
   cursor: pointer;
+}
+#dialog-message p{
+  text-align: left;
+  text-indent: 20px;
+  line-height: 2;
 }

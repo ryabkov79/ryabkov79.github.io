@@ -3,7 +3,6 @@
     $("#datepicker_icon").click(function(){
       $("#bdate").datepicker( "show" );
     });
-
     $("#bdate").datepicker({
       changeMonth: true,
       changeYear: true,
@@ -99,6 +98,31 @@
 				else
           error.appendTo(element.parent());
 			},
+    });
+    $("#dialog-message").dialog({
+      autoOpen: false,
+      modal: true,
+      width: 800,
+      show: {
+        effect: "fade",
+        duration: 300
+      },
+      hide: {
+        effect: "fade",
+        duration: 300
+      },
+      buttons: [{
+        text: "Закрыть",
+        click: function() {
+          $( this ).dialog( "close" );
+        }
+      }]
+    });
+    $( "#person_data_agreement" ).change(function() {
+      if ($(this).is(":checked"))
+      {
+        $( "#dialog-message" ).dialog( "open" );
+      }
     });
   });
 
