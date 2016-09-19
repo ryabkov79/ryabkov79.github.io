@@ -21,7 +21,6 @@
           lettersAndSpace: true,
         },
         pname: {
-          required: true,
           lettersAndSpace: true,
         },
         phone: {
