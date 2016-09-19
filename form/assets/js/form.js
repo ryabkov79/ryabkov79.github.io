@@ -49,6 +49,8 @@
         sms_code: {
 					required: true,
           digits: true,
+          minlength: 6,
+          maxlength: 6,
 				},
         person_data_agreement: "required",
         rules_agreement: "required",
@@ -87,6 +89,8 @@
         sms_code: {
           required: "Введите код активации из СМС",
           digits: "Только цифры",
+          minlength: "6 цифр",
+          maxlength: "6 цифр",
         },
         email: "Введите адрес электронной почты",
         person_data_agreement: "Это поле обязательно",
