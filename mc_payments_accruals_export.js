@@ -1,1 +1,2 @@
-alert('zzz');
+  var ui = SpreadsheetApp.getUi();
+  ui.alert('XXXXXXX');
