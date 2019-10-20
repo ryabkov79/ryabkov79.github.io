@@ -1,4 +1,4 @@
-showSidebar();
+// showSidebar();
 var ss = SpreadsheetApp.getActive(),
     ws = ss.getActiveSheet(),
     ss_id = ss.getId(),
@@ -59,9 +59,9 @@ Logger.log('Начало экспорта ' + new Date());
 //   }
 // }
 // Logger.log('Окончание экспорта ' + new Date());
-closeSidebar();
-var ui = SpreadsheetApp.getUi();
-ui.alert('Выгрузка выполнена');
+// closeSidebar();
+// var ui = SpreadsheetApp.getUi();
+// ui.alert('Выгрузка выполнена');
 
 // function exportRow(row, ws, index, prefix, col_sum, date_string) {
 //   //  var ss_name = ws.Name();
