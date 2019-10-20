@@ -1,23 +1,23 @@
 showSidebar();
-// var ss = SpreadsheetApp.getActive(),
-//     ws = ss.getActiveSheet(),
-//     ss_id = ss.getId(),
-//     ws_id = ws.getSheetId(),
-//     ss_name = ss.getName(),
-//     ws_name = ws.getName(),
-//     col_service_id = 0,
-//     col_service_name = 1,
-//     col_accrual = 2,
-//     col_payment = 3,
-//     col_contractor = 4,
-//     col_comment = 6,
-//     accrual_prefix = 'Нач_',
-//     payment_prefix = 'Опл_',
-//     receiver_ss = SpreadsheetApp.openById('16mmV9HssMP9j9x4lt0EoLMOJsNcgL2ywcyUKx_lfas8'),
-//     accruals_ws = receiver_ss.getSheetByName('Начисления'),
-//     payments_ws = receiver_ss.getSheetByName('Оплаты');
+var ss = SpreadsheetApp.getActive(),
+    ws = ss.getActiveSheet(),
+    ss_id = ss.getId(),
+    ws_id = ws.getSheetId(),
+    ss_name = ss.getName(),
+    ws_name = ws.getName(),
+    col_service_id = 0,
+    col_service_name = 1,
+    col_accrual = 2,
+    col_payment = 3,
+    col_contractor = 4,
+    col_comment = 6,
+    accrual_prefix = 'Нач_',
+    payment_prefix = 'Опл_',
+    receiver_ss = SpreadsheetApp.openById('16mmV9HssMP9j9x4lt0EoLMOJsNcgL2ywcyUKx_lfas8'),
+    accruals_ws = receiver_ss.getSheetByName('Начисления'),
+    payments_ws = receiver_ss.getSheetByName('Оплаты');
 
-// Logger.log('Начало экспорта ' + new Date());
+Logger.log('Начало экспорта ' + new Date());
 
 // // Получаем диапазон листа с данными
 // var range = ws.getDataRange(); 
