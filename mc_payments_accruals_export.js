@@ -59,9 +59,9 @@ showSidebar();
 //   }
 // }
 // Logger.log('Окончание экспорта ' + new Date());
-// closeSidebar();
-// var ui = SpreadsheetApp.getUi();
-// ui.alert('Выгрузка выполнена');
+closeSidebar();
+var ui = SpreadsheetApp.getUi();
+ui.alert('Выгрузка выполнена');
 
 // function exportRow(row, ws, index, prefix, col_sum, date_string) {
 //   //  var ss_name = ws.Name();
@@ -103,8 +103,7 @@ function showSidebar() {
   ui.showSidebar(html);
 }
 
-// function closeSidebar() {
-//   var html = HtmlService.createHtmlOutput("<script>google.script.host.close();</script>");
-//   SpreadsheetApp.getUi().showSidebar(html);
-
-// }
+function closeSidebar() {
+  var html = HtmlService.createHtmlOutput("<script>google.script.host.close();</script>");
+  SpreadsheetApp.getUi().showSidebar(html);
+}
