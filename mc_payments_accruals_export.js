@@ -55,7 +55,7 @@ function export() {
       }
       if (row[col_payment]) {
         // Есть оплата
-        var date = new Date(year, parseInt(ws_name), 0);
+        var date = new Date(year, parseInt(ws_name, 10), 0);
         date_string = (date.getMonth() + 1) + '.' + date.getFullYear();
         Logger.log('В строке ' + (i + 1) + ' есть оплата');
         exportRow(row, payments_ws, i, payment_prefix, col_payment, date_string);
