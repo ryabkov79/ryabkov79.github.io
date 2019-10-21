@@ -1,14 +1,8 @@
-function onOpen( ){
-  var ui = SpreadsheetApp.getUi();
-  ui.createMenu('Скрипты')
-  .addItem('Выгрузить в общую таблицу', 'export')
-  .addToUi();
-}
-
 function export() {
   showSidebar();
   var ss = SpreadsheetApp.getActive(),
       ws = ss.getActiveSheet(),
+      settings_ws = ss.getSheetByName('00'),
       ss_id = ss.getId(),
       ws_id = ws.getSheetId(),
       ss_name = ss.getName(),
@@ -23,7 +17,9 @@ function export() {
       payment_prefix = 'Опл_',
       receiver_ss = SpreadsheetApp.openById('16mmV9HssMP9j9x4lt0EoLMOJsNcgL2ywcyUKx_lfas8'),
       accruals_ws = receiver_ss.getSheetByName('Начисления'),
-      payments_ws = receiver_ss.getSheetByName('Оплаты');
+      payments_ws = receiver_ss.getSheetByName('Оплаты'),
+      year = settings_ws.getRange(5, 2).getValue(),
+      house = settings_ws.getRange(6, 2).getValue();
   
   Logger.log('Начало экспорта ' + new Date());
   
@@ -35,12 +31,12 @@ function export() {
   var accrual = [];
   var payment = [];
   
-  var date_parts = ws_name.split('.');
+//  var date_parts = ws_name.split('.');
   var date_string = '';
-  if (date_parts.length != 2) {
+  if (!parseInt(ws_name, 10)) {
     Logger.log('Неверный формат имени листа');
     var ui = SpreadsheetApp.getUi();
-    ui.alert('Неверный формат имени листа')
+    ui.alert('Неверный формат имени листа. Лист дожен быть номером месяца.')
     return;
   }
   
@@ -52,14 +48,14 @@ function export() {
       
       if (row[col_accrual]) {
         // Есть начисление
-        var date = new Date(date_parts[1], date_parts[0]-1, 0);
+        var date = new Date(year, parseInt(ws_name, 10)-1, 0);
         date_string = (date.getMonth() + 1) + '.' + date.getFullYear();
         Logger.log('В строке ' + (i + 1) + ' есть начисление');
         exportRow(row, accruals_ws, i, accrual_prefix, col_accrual, date_string);
       }
       if (row[col_payment]) {
         // Есть оплата
-        var date = new Date(date_parts[1], date_parts[0], 0);
+        var date = new Date(year, parseInt(ws_name), 0);
         date_string = (date.getMonth() + 1) + '.' + date.getFullYear();
         Logger.log('В строке ' + (i + 1) + ' есть оплата');
         exportRow(row, payments_ws, i, payment_prefix, col_payment, date_string);
@@ -72,16 +68,14 @@ function export() {
   ui.alert('Выгрузка выполнена');
   
   function exportRow(row, ws, index, prefix, col_sum, date_string) {
-    //  var ss_name = ws.Name();
-    //  var ws_name = ws.getName();
-    var id = prefix + ss_name + '_' + ws_name +  '_' + index;
+    var id = prefix + house + '_' + ws_name + '.' + year +  '_' + index;
     var service = '' + row[col_service_id] + ' ' + row[col_service_name];
     var textFinder = ws.createTextFinder(id);
     var data_detected = textFinder.findNext();
     var data = [
       id,
       date_string,
-      ss_name,
+      house,
       service,
       row[col_contractor],
       row[col_comment],
@@ -115,10 +109,4 @@ function export() {
     var html = HtmlService.createHtmlOutput("<script>google.script.host.close();</script>");
     SpreadsheetApp.getUi().showSidebar(html);
   }
-}
-
-function loadJSFromServer() {
-  var url = "https://raw.githubusercontent.com/ryabkov79/ryabkov79.github.io/master/mc_payments_accruals_export.js";
-  var javascript = UrlFetchApp.fetch(url).getContentText();
-  eval(javascript);
 }
