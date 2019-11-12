@@ -13,6 +13,8 @@ function export() {
       col_payment = 3,
       col_contractor = 4,
       col_comment = 6,
+      col_accrual_scan = 7,
+      col_payment_scan = 8,
       accrual_prefix = 'Нач_',
       payment_prefix = 'Опл_',
       receiver_ss = SpreadsheetApp.openById('16mmV9HssMP9j9x4lt0EoLMOJsNcgL2ywcyUKx_lfas8'),
@@ -51,14 +53,14 @@ function export() {
         var date = new Date(year, parseInt(ws_name, 10)-1, 0);
         date_string = (date.getMonth() + 1) + '.' + date.getFullYear();
         Logger.log('В строке ' + (i + 1) + ' есть начисление');
-        exportRow(row, accruals_ws, i, accrual_prefix, col_accrual, date_string);
+        exportRow(row, accruals_ws, i, accrual_prefix, col_accrual, date_string, col_accrual_scan);
       }
       if (row[col_payment]) {
         // Есть оплата
         var date = new Date(year, parseInt(ws_name, 10)-0, 0);
         date_string = (date.getMonth() + 1) + '.' + date.getFullYear();
         Logger.log('В строке ' + (i + 1) + ' есть оплата');
-        exportRow(row, payments_ws, i, payment_prefix, col_payment, date_string);
+        exportRow(row, payments_ws, i, payment_prefix, col_payment, date_string, col_payment_scan);
       }
     }
   }
@@ -67,7 +69,7 @@ function export() {
   var ui = SpreadsheetApp.getUi();
   ui.alert('Выгрузка выполнена');
   
-  function exportRow(row, ws, index, prefix, col_sum, date_string) {
+  function exportRow(row, ws, index, prefix, col_sum, date_string, col_scan) {
     var id = prefix + house + '_' + ws_name + '.' + year +  '_' + index;
     var service = '' + row[col_service_id] + ' ' + row[col_service_name];
     var textFinder = ws.createTextFinder(id);
@@ -79,7 +81,8 @@ function export() {
       service,
       row[col_contractor],
       row[col_comment],
-      row[col_sum]
+      row[col_sum],
+      row[col_scan]
     ];
     if(data_detected) {
       Logger.log('Найдена строка ' + id + ', обновление');
