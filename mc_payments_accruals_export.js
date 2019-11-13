@@ -21,7 +21,9 @@ function export() {
       accruals_ws = receiver_ss.getSheetByName('Начисления'),
       payments_ws = receiver_ss.getSheetByName('Оплаты'),
       year = settings_ws.getRange(5, 2).getValue(),
-      house = settings_ws.getRange(6, 2).getValue();
+      house = settings_ws.getRange(6, 2).getValue(),
+      filled_reports_ss = SpreadsheetApp.openById('1viij2MbOQGHZP2Hj77LaE_eu0IWjODg5jQPN3fVuUlY'),
+      filled_reports_ws = filled_reports_ss.getSheetByName('Отчёты');
   
   Logger.log('Начало экспорта ' + new Date());
   
@@ -64,6 +66,8 @@ function export() {
       }
     }
   }
+  exportReportStatus();
+  
   Logger.log('Окончание экспорта ' + new Date());
   closeSidebar();
   var ui = SpreadsheetApp.getUi();
@@ -96,6 +100,34 @@ function export() {
     else {
       Logger.log('Строка ' + id + ' не найдена, добавление');
       ws.appendRow(data);
+    }
+  }
+  
+  function exportReportStatus() {
+    var id = house + '_' + ws_name + '.' + year,
+    status = ws.getRange(4, 8).getValue(),
+    status_normalized = 1;
+    var date = new Date(year, parseInt(ws_name, 10)-0, 0);
+    var date_string = (date.getMonth() + 1) + '.' + date.getFullYear();
+
+    if (status == 'нет') {
+      status_normalized = 0;
+    }
+    var data = [id, date_string, house, status_normalized];
+    var textFinder = filled_reports_ws.createTextFinder(id);
+    var data_detected = textFinder.findNext();
+    if(data_detected) {
+      Logger.log('Найдена строка ' + id + ' в таблице отчётов, обновление');
+      var range_row = data_detected.getRow();
+      var range_start_col = 1;
+      var range_rows = 1;
+      var range_cols = data.length;
+      var range = filled_reports_ws.getRange(range_row, range_start_col, range_rows, range_cols);
+      range.setValues([data]);
+    }
+    else {
+      Logger.log('Строка ' + id + ' не найдена в таблице отчётов, добавление');
+      filled_reports_ws.appendRow(data);
     }
   }
   
