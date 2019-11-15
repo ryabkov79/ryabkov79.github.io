@@ -110,7 +110,7 @@ function export() {
     var date = new Date(year, parseInt(ws_name, 10)-0, 0);
     var date_string = (date.getMonth() + 1) + '.' + date.getFullYear();
 
-    if (status == 'нет') {
+    if (status.toLowerCase() == 'нет') {
       status_normalized = 0;
     }
     var data = [id, date_string, house, status_normalized];
